@@ -1,10 +1,13 @@
-import express, {Express, Request, Response} from "express"
+import express, { Express, Request, Response } from "express"
 
-const app:Express = express();
+const app: Express = express();
 const port: number = 3000;
 
+app.set("views", "./views")
+app.set("view engine", "pug")
+
 app.get("/topics", (req: Request, res: Response) => {
-  res.send("Chủ đề bài hát")
+  res.render("client/pages/topics/index")
 })
 
 app.listen(port, () => {
