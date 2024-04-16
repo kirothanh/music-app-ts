@@ -112,3 +112,89 @@
   color: #585858;
 }
 /* End song-item */
+
+/* singer-detail */
+.singer-detail .inner-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f57f20;
+  margin-bottom: 15px;
+}
+
+.singer-detail .inner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* khoảng cách giữa các items */
+}
+
+.singer-detail .inner-action {
+  display: flex;
+  align-items: center; /* căn giữa các items theo chiều dọc */
+}
+
+.singer-detail .inner-action i {
+  margin-right: 8px; /* khoảng cách giữa icon và text */
+}
+
+.singer-detail .inner-action .fa-thumbs-up {
+  color: #3a74cd;
+}
+
+.singer-detail .inner-action .fa-heart {
+  color: #95474b;
+}
+
+.singer-detail .inner-play {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0 15px 0;
+  align-items: center;
+}
+
+.singer-detail .inner-avatar {
+  margin-right: 15px;
+}
+
+.singer-detail .inner-avatar img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #f17e28;
+  animation: spin 8s linear infinite;
+  /* animation-play-state: paused; */
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.singer-detail .inner-audio {
+  width: 100%;
+}
+
+.singer-detail .inner-desc {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.singer-detail .inner-desc .inner-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f57f20;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.singer-detail .inner-desc .inner-text {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+/* End singer-detail */
