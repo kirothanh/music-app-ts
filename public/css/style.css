@@ -115,55 +115,81 @@
 
 /* singer-detail */
 .singer-detail .inner-title {
-  font-size: 26px;
-  font-weight: 600;
-  color: #f57f20;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 15px;
+  color: #f57f20;
 }
 
 .singer-detail .inner-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px; /* khoảng cách giữa các items */
+  margin-bottom: 10px;
 }
 
-.singer-detail .inner-action {
-  display: flex;
-  align-items: center; /* căn giữa các items theo chiều dọc */
+.singer-detail .inner-actions .inner-action {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  display: inline-block;
+  align-items: center;
+  font-weight: 600;
+  color: #646464;
 }
 
-.singer-detail .inner-action i {
-  margin-right: 8px; /* khoảng cách giữa icon và text */
+.singer-detail .inner-actions .inner-action i {
+  font-size: 16px;
+  margin-right: 5px;
 }
 
-.singer-detail .inner-action .fa-thumbs-up {
-  color: #3a74cd;
+.singer-detail .inner-actions .inner-like {
+  cursor: pointer;
 }
 
-.singer-detail .inner-action .fa-heart {
-  color: #95474b;
+.singer-detail .inner-actions .inner-like i {
+  color: #0059ff;
+}
+
+.singer-detail .inner-actions .inner-like.active {
+  color: #0059ff;
+}
+
+.singer-detail .inner-actions .inner-like.active i {
+  font-weight: 900;
+}
+
+.singer-detail .inner-actions .inner-heart {
+  cursor: pointer;
+}
+
+.singer-detail .inner-actions .inner-heart i {
+  color: #b90000;
 }
 
 .singer-detail .inner-play {
-  width: auto;
   display: flex;
-  flex-direction: row;
-  margin: 15px 0 15px 0;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.singer-detail .inner-play .inner-audio {
+  flex: 1
 }
 
 .singer-detail .inner-avatar {
-  margin-right: 15px;
-}
-
-.singer-detail .inner-avatar img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
   border-radius: 50%;
+  overflow: hidden;
   border: 5px solid #f17e28;
-  animation: spin 8s linear infinite;
-  /* animation-play-state: paused; */
+  margin-right: 20px;
+  animation-name: spin;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
 }
 
 @keyframes spin {
@@ -175,8 +201,10 @@
   }
 }
 
-.singer-detail .inner-audio {
+.singer-detail .inner-avatar img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .singer-detail .inner-desc {
