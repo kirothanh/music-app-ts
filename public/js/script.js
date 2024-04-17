@@ -33,6 +33,7 @@ if(aplayer) {
 }
 // End APlayer
 
+
 // Button Like
 const buttonLike = document.querySelector("[button-like]");
 
@@ -54,8 +55,37 @@ buttonLike.addEventListener("click", async () => {
       const span = buttonLike.querySelector("span");
       span.innerHTML = `${data.like} thích`
 
-      buttonLike.classList.toggle("active");
+      if(data.code == 200) {
+        buttonLike.classList.toggle("active");
+      }
     })
   
 })
 // End Button Like
+
+
+// Button Favourite
+const buttonFavourite = document.querySelector("[button-favourite]");
+
+buttonFavourite.addEventListener("click", async () => {
+  const idSong = buttonFavourite.getAttribute("button-favourite");
+  const isActive = buttonFavourite.classList.contains("active");
+
+  const typeFavourite = isActive ? "unfavourite" : "favourite"
+
+  const link = `/songs/favourite/${typeFavourite}/${idSong}`;
+
+  const option = {
+    method: "PATCH"
+  }
+
+  fetch(link, option)
+    .then(res => res.json())
+    .then(data => {
+      if(data.code == 200) {
+        buttonFavourite.classList.toggle("active");
+      }
+    })
+  
+})
+// End Button Favourite
