@@ -30,6 +30,21 @@ if(aplayer) {
     avatar.style.animationPlayState = "paused"
   })
 
+  ap.on("ended", function () {
+    const link = `/songs/listen/${dataSong._id}`;
+  
+    const option = {
+      method: "PATCH"
+    }
+  
+    fetch(link, option)
+      .then(res => res.json())
+      .then(data => {
+        const elementListenspan = document.querySelector(".singer-detail .inner-listen span");
+        elementListenspan.innerHTML = `${data.listen} lượt nghe`
+      })
+  })
+
 }
 // End APlayer
 
@@ -95,6 +110,7 @@ if(listbuttonFavourites.length > 0) {
   })
 }
 // End Button Favourite
+
 
 // Search Suggest
 const boxSearch = document.querySelector(".box-search");
