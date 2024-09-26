@@ -11,10 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.20.3",
     "cloudinary": "^2.2.0",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "method-override": "^3.0.0",
     "mongoose": "^8.3.1",
     "mongoose-slug-updater": "^3.3.0",
